@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Dark theme (default) ── */
+:root {
+  --bg:         #070D18;
+  --surface:    #0B1529;
+  --surface2:   #0F1E35;
+  --border:     rgba(255,255,255,0.07);
+  --border2:    rgba(255,255,255,0.04);
+  --text:       #FFFFFF;
+  --text2:      rgba(255,255,255,0.85);
+  --muted:      #6B7A9A;
+  --muted2:     #3D4F6B;
+  --good:       #4ADE80;
+  --bad:        #F87171;
+  --warn:       #FCD34D;
+  --header-bg:  #070D18;
+  --row-hover:  rgba(255,255,255,0.025);
+  --input-bg:   #0F1E35;
+}
+
+/* ── Light theme ── */
+[data-theme="light"] {
+  --bg:         #F5F6FA;
+  --surface:    #FFFFFF;
+  --surface2:   #F0F2F7;
+  --border:     rgba(0,0,0,0.08);
+  --border2:    rgba(0,0,0,0.04);
+  --text:       #0B1529;
+  --text2:      #1E2D45;
+  --muted:      #696969;
+  --muted2:     #A0A8B8;
+  --good:       #16A34A;
+  --bad:        #DC2626;
+  --warn:       #D97706;
+  --header-bg:  #FFFFFF;
+  --row-hover:  rgba(0,0,0,0.02);
+  --input-bg:   #F0F2F7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Table globals */
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+
+th {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 12px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  white-space: nowrap;
+}
+
+th:first-child { text-align: left; }
+
+td {
+  padding: 9px 12px;
+  color: var(--text2);
+  border-bottom: 1px solid var(--border2);
+  text-align: right;
+  white-space: nowrap;
+}
+
+td:first-child { text-align: left; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--row-hover); }
+
+/* Number style */
+.num {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-size: 13px;
+}
+
+.num-lg {
+  font-family: 'Clash Grotesk', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  font-size: 22px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--muted2); }
